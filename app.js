@@ -34,7 +34,7 @@ const swaggerOptions = {
     },
     servers: [
       { url: 'http://localhost:3030' },
-      { url: '    ' }
+      { url: 'https://cine3-production.up.railway.app/' }
     ]
   },
   apis: ['./app.js'], // Aquí busca los comentarios JSDoc
