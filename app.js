@@ -67,14 +67,15 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  */
 app.post('/api/butacas/guardar', async (req, res) => {
   try {
-    const nuevaReserva = new Butaca(req.body);
-    await nuevaReserva.save();
+    const butacas = new Butaca(req.body); // espera { butacas: [...] }
+    await butacas.save();
     res.status(200).json({ message: 'Butacas guardadas correctamente' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al guardar butacas' });
   }
 });
+
 
 /**
  * @swagger
